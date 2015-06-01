@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- common -->
+    <color name="transparent">#00000000</color>
+    <color name="half_transparent">#80000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="activity_bg">#F9F9F9</color>
+    <color name="main_bar_bg">#F0F0F0</color>
+    <color name="main_bar_selected_bg">#E8E8E8</color>
+    <color name="gap_line_bg">#E8E8E8</color>
+    <color name="listview_item_unpressed">#f9f9f9</color>
+    <color name="listview_item_pressed">#E6E6E6</color>
+    <color name="popup_bg">#80000000</color>
+    <color name="global_bg_light">#fcf9f7</color>
+    <color name="global_back_pressed_bg">#1d1c21</color>
+    <color name="global_bg_dark">#ff2c2828</color>
+
+    <!-- title bar view -->
+    <color name="title_bar_bg">#2A292F</color>
+    <color name="title_text_color">#FFFFFF</color>
+    <color name="title_line_color">#c1c1c1</color>
+    <color name="title_button_selected_color">#801D1C21</color>
+    <!-- tab strip view -->
+    <color name="tab_text_normal_color">#808080</color>
+    <color name="tab_text_selected_color">#E40450</color>
+    <color name="strip_color">#E40550</color>
+    <color name="deep_red_color">#C60043</color>
+    
+    
+    <!-- user home page -->
+    <color name="dialog_msg_color">#646464</color>
+    <color name="user_login_pressed">#c60043</color>
+    <color name="dialog_negative_text_color">#9A9A9A</color>
+    <color name="video_size_text_color">#BFBFBF</color>
+    <color name="progress_bar_bg_color">#9C9FA1</color>
+    <color name="progress_bar_progress_color">#E30450</color>
+    <color name="edit_line_bg">#D7D7D7</color>
+    <color name="shape_stroke_color">#D2D2D2</color>
+    <color name="comment_count_text_color">#B3B3B3</color>
+    <color name="feedback_content_color">#909090</color>
+    <color name="feedback_warning_bg">#F1F1F1</color>
+    <color name="user_login">#E40550</color>
+    <color name="user_register">#f9f9f9</color>
+
+</resources>

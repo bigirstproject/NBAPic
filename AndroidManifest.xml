@@ -6,15 +6,16 @@
 
     <uses-sdk
         android:minSdkVersion="9"
-        android:targetSdkVersion="21" />
+        android:targetSdkVersion="22" />
 
     <application
+        android:name="com.sunsun.nbapic.NbaPicApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name="com.sunsun.nbapic.activity.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

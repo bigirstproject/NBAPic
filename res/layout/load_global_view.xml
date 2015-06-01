@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/global_reload"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@color/activity_bg"
+    android:gravity="center" >
+
+    <include
+        android:id="@+id/content_empty_view"
+        layout="@layout/load_content_empty_view"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/load_fail_view"
+        layout="@layout/load_fail_view"
+        android:visibility="gone" />
+
+   
+
+</FrameLayout>
