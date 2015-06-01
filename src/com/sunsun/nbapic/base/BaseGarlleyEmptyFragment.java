@@ -1,4 +1,6 @@
-package com.duowan.android.dwyx.base;
+package com.sunsun.nbapic.base;
+
+import com.sunsun.nbapic.R;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,7 +13,6 @@ import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.duowan.webapp.R;
 
 public class BaseGarlleyEmptyFragment extends BaseFragment {
 

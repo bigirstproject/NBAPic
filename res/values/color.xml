@@ -16,19 +16,20 @@
     <color name="global_bg_light">#fcf9f7</color>
     <color name="global_back_pressed_bg">#1d1c21</color>
     <color name="global_bg_dark">#ff2c2828</color>
+    <color name="garlley_reload">#ffffff</color>
+    <color name="garlley_reload_pressed">#767676</color>
 
     <!-- title bar view -->
     <color name="title_bar_bg">#2A292F</color>
     <color name="title_text_color">#FFFFFF</color>
     <color name="title_line_color">#c1c1c1</color>
     <color name="title_button_selected_color">#801D1C21</color>
-    <!-- tab strip view -->
+    <!-- tab strip view -->
     <color name="tab_text_normal_color">#808080</color>
     <color name="tab_text_selected_color">#E40450</color>
     <color name="strip_color">#E40550</color>
     <color name="deep_red_color">#C60043</color>
-    
-    
+
     <!-- user home page -->
     <color name="dialog_msg_color">#646464</color>
     <color name="user_login_pressed">#c60043</color>

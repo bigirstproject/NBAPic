@@ -1,4 +1,4 @@
-package com.sunsun.nbapic.fragment;
+package com.sunsun.nbapic.base;
 
 import java.util.List;
 
@@ -12,15 +12,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 
-import com.duowan.android.dwyx.base.adapter.BaseImageAdapter;
-import com.duowan.android.dwyx.model.LunboListItem;
-import com.duowan.android.dwyx.news.ArticleDetailActivity;
-import com.duowan.android.dwyx.news.NewsGalleryActivity;
-import com.duowan.android.dwyx.news.NewsGalleryFragment;
-import com.duowan.android.dwyx.news.SpecialActivity;
-import com.duowan.android.dwyx.news.WebActivity;
-import com.duowan.android.dwyx.util.StatisticsUtil;
-import com.duowan.android.dwyx.view.infinitebanner.BaseBannerView.OnBannerItemClickListener;
+import com.sunsun.nbapic.adapter.BaseImageAdapter;
+import com.sunsun.nbapic.viewpager.BaseBannerView.OnBannerItemClickListener;
 
 public abstract class BaseBannerFragment<E, W> extends BaseListFragment<E>
 		implements OnBannerItemClickListener {
@@ -39,7 +32,7 @@ public abstract class BaseBannerFragment<E, W> extends BaseListFragment<E>
 			mBannerAdapter = initBannerAdapter();
 			View viewHeader = addListViewHeader();
 			if (viewHeader != null) {
-				listView.addHeaderView(viewHeader);
+				mXListView.addHeaderView(viewHeader);
 			}
 		}
 	}
@@ -139,68 +132,8 @@ public abstract class BaseBannerFragment<E, W> extends BaseListFragment<E>
 
 	@Override
 	public void onBannerItemClick(View view, ListAdapter adapter, int position) {
-		LunboListItem item = (LunboListItem) adapter.getItem(position);
-		if (item == null) {
-			return;
-		}
-		switch (item.getType()) {
-		case 1:
-			ArticleDetailActivity.startArticleDetailActivity(getActivity(),
-					String.valueOf(item.getNews_id()));
-			StatisticsUtil.statsReportAllData(getActivity(),
-					"news_list_onclick", "onclick", "article_detail");
-			break;
-		case 2:
-			WebActivity.startWebActivity(getActivity(), item.getLink(),"");
-			break;
-		case 3:
-			SpecialActivity.startSpecialActivity(getActivity(),
-					String.valueOf(item.getNews_id()),item.getTitle());
-			break;
-		case 4:
-			NewsGalleryActivity.startNewsGalleryActivity(getActivity(),
-					String.valueOf(item.getNews_id()),
-					NewsGalleryFragment.FROM_NEWS_LIST);
-			break;
-		case 5:
-			ArticleDetailActivity.startArticleDetailActivity(getActivity(),
-					String.valueOf(item.getNews_id()));
-			break;
-		default:
-			break;
-		}
-		statistics(item, position);
+		
 	}
 
-	private void statistics(LunboListItem item, int position) {
-		switch (item.getType()) {
-		case 1:
-			StatisticsUtil.statsReportAllData(getActivity(),
-					"news_list_onclick", "onclick", "article_detail");
-			break;
-		case 2:
-			StatisticsUtil.statsReportAllData(getActivity(),
-					"news_list_onclick", "onclick", "web_page");
-			break;
-		case 3:
-			StatisticsUtil.statsReportAllData(getActivity(),
-					"news_list_onclick", "onclick", "special");
-			break;
-		case 4:
-			StatisticsUtil.statsReportAllData(getActivity(),
-					"news_list_onclick", "onclick", "gallery");
-			break;
-		case 5:
-			StatisticsUtil.statsReportAllData(getActivity(),
-					"news_list_onclick", "onclick", "video_article_detail");
-			break;
-		default:
-			break;
-		}
-		StatisticsUtil.statsReportAllData(getActivity(), "news_article",
-				"article", "(" + item.getId() + ") " + item.getTitle());
-		StatisticsUtil.statsReportAllData(getActivity(), "news_banner_onclick",
-				"onclick", String.valueOf(position));
-	}
 
 }

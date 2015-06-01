@@ -1,4 +1,4 @@
-package com.sunsun.nbapic.fragment;
+package com.sunsun.nbapic.base;
 
 import com.sunsun.nbapic.R;
 

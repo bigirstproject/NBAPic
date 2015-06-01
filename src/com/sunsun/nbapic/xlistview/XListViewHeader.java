@@ -52,9 +52,8 @@ public class XListViewHeader extends LinearLayout {
 	}
 
 	private void initView(Context context) {
-		// ��ʼ�������������ˢ��view�߶�Ϊ0
 		LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
-				LayoutParams.FILL_PARENT, 0);
+				LayoutParams.MATCH_PARENT, 0);
 		mContainer = (LinearLayout) LayoutInflater.from(context).inflate(
 				R.layout.xlistview_header, null);
 		addView(mContainer, lp);
@@ -79,11 +78,11 @@ public class XListViewHeader extends LinearLayout {
 	public void setState(int state) {
 		if (state == mState) return ;
 		
-		if (state == STATE_REFRESHING) {	// ��ʾ���
+		if (state == STATE_REFRESHING) {	
 			mArrowImageView.clearAnimation();
 			mArrowImageView.setVisibility(View.INVISIBLE);
 			mProgressBar.setVisibility(View.VISIBLE);
-		} else {	// ��ʾ��ͷͼƬ
+		} else {	
 			mArrowImageView.setVisibility(View.VISIBLE);
 			mProgressBar.setVisibility(View.INVISIBLE);
 		}

@@ -1,17 +1,17 @@
-package com.duowan.android.dwyx.base;
+package com.sunsun.nbapic.base;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LinearInterpolator;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.duowan.webapp.R;
+import com.sunsun.nbapic.R;
 
 public class BaseEmptyFragmentActivity extends BaseFragmentActivity {
 	

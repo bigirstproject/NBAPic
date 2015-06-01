@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:id="@+id/footer_loaded"
+        android:layout_width="match_parent"
+        android:layout_height="57dip"
+        android:background="@color/activity_bg"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="visible" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="57dip"
+            android:scaleType="centerInside"
+            android:src="@drawable/common_footer_logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="57dip"
+            android:layout_marginLeft="8dip"
+            android:layout_marginStart="8dip"
+            android:gravity="center"
+            android:text="@string/common_footer_text"
+            android:textColor="#9a9a9a"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/footer_loading"
+        android:layout_width="match_parent"
+        android:layout_height="64dip"
+        android:background="@color/activity_bg"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <ImageView
+            android:id="@+id/footer_loading_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerInside"
+            android:src="@drawable/rotate_loading" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dip"
+            android:gravity="center"
+            android:text="@string/common_footer_loading_text"
+            android:textColor="#9a9a9a"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+</FrameLayout>

@@ -8,9 +8,6 @@
  */
 package com.sunsun.nbapic.xlistview;
 
-
-import com.sunsun.nbapic.R;
-
 import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -25,6 +22,8 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Scroller;
 import android.widget.TextView;
+
+import com.sunsun.nbapic.R;
 
 public class XListView extends ListView implements OnScrollListener {
 
@@ -200,7 +199,7 @@ public class XListView extends ListView implements OnScrollListener {
 	private void updateHeaderHeight(float delta) {
 		mHeaderView.setVisiableHeight((int) delta
 				+ mHeaderView.getVisiableHeight());
-		if (mEnablePullRefresh && !mPullRefreshing) { // δ����ˢ��״̬�����¼�ͷ
+		if (mEnablePullRefresh && !mPullRefreshing) { 
 			if (mHeaderView.getVisiableHeight() > mHeaderViewHeight) {
 				mHeaderView.setState(XListViewHeader.STATE_READY);
 			} else {
@@ -265,7 +264,9 @@ public class XListView extends ListView implements OnScrollListener {
 			mListViewListener.onLoadMore();
 		}
 	}
-private boolean isScorll = false;
+
+	private boolean isScorll = false;
+
 	@Override
 	public boolean onTouchEvent(MotionEvent ev) {
 		if (mLastY == -1) {
@@ -275,7 +276,7 @@ private boolean isScorll = false;
 		switch (ev.getAction()) {
 		case MotionEvent.ACTION_DOWN:
 			mLastY = ev.getRawY();
-		
+
 			break;
 		case MotionEvent.ACTION_MOVE:
 			isScorll = true;
@@ -295,9 +296,9 @@ private boolean isScorll = false;
 		default:
 			mLastY = -1; // reset
 			int firstVisiblePosition = getFirstVisiblePosition();
-			Log.d("test", "firstVisiblePosition = "+firstVisiblePosition);
+			Log.d("test", "firstVisiblePosition = " + firstVisiblePosition);
 			int lastVisiblePosition = getLastVisiblePosition();
-			Log.d("test", "lastVisiblePosition = "+lastVisiblePosition);
+			Log.d("test", "lastVisiblePosition = " + lastVisiblePosition);
 			if (getFirstVisiblePosition() == 0) {
 				// invoke refresh
 				if (mEnablePullRefresh
@@ -310,13 +311,13 @@ private boolean isScorll = false;
 				}
 				resetHeaderHeight();
 			} else if (getLastVisiblePosition() == mTotalItemCount - 1) {
-		
-//				 invoke load more.
-//				if (mEnablePullLoad
-//						&& mFooterView.getBottomMargin() >= PULL_LOAD_MORE_DELTA) {
-//					startLoadMore();
-//				}
-//				resetFooterHeight();
+
+				// invoke load more.
+				// if (mEnablePullLoad
+				// && mFooterView.getBottomMargin() >= PULL_LOAD_MORE_DELTA) {
+				// startLoadMore();
+				// }
+				// resetFooterHeight();
 			}
 			break;
 		}
@@ -353,12 +354,14 @@ private boolean isScorll = false;
 	public void onScroll(AbsListView view, int firstVisibleItem,
 			int visibleItemCount, int totalItemCount) {
 		// send to user's listener
-		Log.d("test", "firstVisibleItem = "+firstVisibleItem+"  visibleItemCount = "+visibleItemCount+"   totalItemCount = "+totalItemCount);
-		if(isScorll&&getLastVisiblePosition() == totalItemCount - 1){
+		Log.d("test", "firstVisibleItem = " + firstVisibleItem
+				+ "  visibleItemCount = " + visibleItemCount
+				+ "   totalItemCount = " + totalItemCount);
+		if (isScorll && getLastVisiblePosition() == totalItemCount - 1) {
 			startLoadMore();
 			resetFooterHeight();
 		}
-		
+
 		mTotalItemCount = totalItemCount;
 		if (mScrollListener != null) {
 			mScrollListener.onScroll(view, firstVisibleItem, visibleItemCount,

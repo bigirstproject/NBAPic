@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sunsun.nbapic.xlistview.XListView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/refresh_listview"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/activity_bg"
+    android:divider="@null"
+    android:dividerHeight="0dp"
+    android:fadingEdge="none"
+    android:fastScrollEnabled="true"
+    android:footerDividersEnabled="false"
+    android:headerDividersEnabled="false"
+    android:smoothScrollbar="true" />
+
