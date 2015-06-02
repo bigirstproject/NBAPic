@@ -1,8 +1,7 @@
 package com.sunsun.nbapic.entity;
 
-import java.io.Serializable;
 
-public class NewsEntity implements Serializable {
+public class NewsEntity  extends BaseEntity {
 
 	/**
 	 * 

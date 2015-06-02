@@ -1,12 +1,13 @@
 package com.sunsun.nbapic.entity;
 
-import java.io.Serializable;
 
-public class ChannelEntity implements Serializable {
+public class ChannelEntity extends BaseEntity {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -4059630093552760722L;
+	private static final long serialVersionUID = 8764041005593121455L;
 
+	
+	
 }

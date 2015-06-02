@@ -17,6 +17,8 @@ import android.os.StatFs;
 import android.provider.Settings.Secure;
 import android.text.TextUtils;
 
+import com.sunsun.nbapic.imageutil.SwitchImageLoader;
+
 public class NbaPicApplication extends Application {
 
 	private static NbaPicApplication mInstance;
@@ -28,16 +30,17 @@ public class NbaPicApplication extends Application {
 		super.onCreate();
 		mInstance = this;
 		appContext = getApplicationContext();
+		SwitchImageLoader.init(this);
 	}
-	
+
 	public static NbaPicApplication getInstance() {
 		return mInstance;
 	}
- 
+
 	public static Context getAppContext() {
 		return appContext;
 	}
-	
+
 	@Override
 	public void onLowMemory() {
 		super.onLowMemory();
@@ -57,9 +60,9 @@ public class NbaPicApplication extends Application {
 		return Secure.getString(NbaPicApplication.getInstance()
 				.getContentResolver(), Secure.ANDROID_ID);
 	}
-	
+
 	/**
-	 * ¼ì²é SDCard ÊÇ·ñ×°ÔØ
+	 * æ£€æŸ¥ SDCard æ˜¯å¦è£…è½½
 	 */
 	public boolean isSDCardMounted() {
 		return Environment.MEDIA_MOUNTED.equals(Environment
@@ -67,7 +70,7 @@ public class NbaPicApplication extends Application {
 	}
 
 	/**
-	 * SD¿¨Ê£Óà¿Õ¼ä´óĞ¡
+	 * SDå¡å‰©ä½™ç©ºé—´å¤§å°
 	 * 
 	 * @return
 	 */
@@ -84,7 +87,7 @@ public class NbaPicApplication extends Application {
 	}
 
 	/**
-	 * SD¿¨×ÜÈİÁ¿
+	 * SDå¡æ€»å®¹é‡
 	 * 
 	 * @return
 	 */
@@ -101,7 +104,7 @@ public class NbaPicApplication extends Application {
 	}
 
 	/**
-	 * ¼ì²éÍøÂç×´Ì¬
+	 * æ£€æŸ¥ç½‘ç»œçŠ¶æ€Ì¬
 	 */
 	public boolean checkNetworkState() {
 		boolean connected = false;
@@ -119,7 +122,7 @@ public class NbaPicApplication extends Application {
 	}
 
 	/**
-	 * ÍøÂç×´Ì¬ÊÇ·ñÊÇwifi
+	 * ç½‘ç»œçŠ¶æ€æ˜¯å¦æ˜¯wifi
 	 */
 	public boolean isWifiNetworkState() {
 		ConnectivityManager manager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -132,7 +135,7 @@ public class NbaPicApplication extends Application {
 	}
 
 	/**
-	 * »ñÈ¡°æ±¾ºÅ
+	 * è·å–ç‰ˆæœ¬å·
 	 * 
 	 * @return app_version
 	 */
@@ -150,7 +153,7 @@ public class NbaPicApplication extends Application {
 	}
 
 	/**
-	 * »ñÈ¡°æ±¾ºÅ
+	 * è·å–ç‰ˆæœ¬å·
 	 * 
 	 * @return app_versionCode
 	 */
@@ -200,10 +203,9 @@ public class NbaPicApplication extends Application {
 		}
 		return userAgent;
 	}
-	
 
 	/**
-	 * Éú³ÉÇëÇóÓÃµÄuser-agent
+	 * ç”Ÿæˆè¯·æ±‚ç”¨çš„user-agent
 	 * 
 	 * @return
 	 */
@@ -217,6 +219,5 @@ public class NbaPicApplication extends Application {
 		stringBuilder.append(android.os.Build.MODEL).append(";)");
 		return stringBuilder.toString();
 	}
-	
 
 }

@@ -1,8 +1,8 @@
 package com.sunsun.nbapic.entity;
 
-import java.io.Serializable;
 
-public class GalleryEntity implements Serializable {
+public class GalleryEntity  extends BaseEntity {
+
 
 	/**
 	 * 
